@@ -4,7 +4,7 @@
 } */
 .layout {
     width: 100%;
-    height: 2000px;
+    height: 100%;
     background-image: url("../public/img/bgmovie.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,22 +20,80 @@
 }
 .wrap {
     width: 900px;
-    height: 1400px;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 70px;
+    padding-top: 70px;
 }
 .content {
     width: 85%;
     height: 90%;
-    background-color: #fff;
 }
 .content h4 {
     font-family: "Source Sans Pro", sans-serif;
     color: #ff9800;
+}
+form {
+    margin-top: 50px;
+}
+label {
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+}
+input {
+    background: transparent;
+    border: 2px solid #888686;
+    background-color: transparent;
+    width: 300px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    margin-left: 40px;
+}
+.seat__title {
+    margin-top: 40px;
+}
+button {
+    margin-top: 40px;
+    background: #f5f5f5;
+    border: none;
+    color: #000;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-family: "Source Sans Pro", sans-serif;
+    cursor: pointer;
+}
+.note {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.statusBox {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.status {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    display: inline-block;
+    color: white;
+    padding-left: 20px;
+}
+table {
+    border-spacing: 11px;
+    border-collapse: unset;
 }
 .bookingMovie {
     font-family: "fontGame";
@@ -46,12 +104,17 @@
     width: 45px;
     height: 35px;
     font-size: 12px;
-    margin-left: 2%;
+    margin-left: 10px;
     margin-bottom: 1%;
     border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
 }
-
 .rowNumber {
+    text-align: center;
+}
+.rowNumber,
+.columnName {
     /* font-size: 25px; */
     width: 45px;
     height: 35px;
@@ -59,8 +122,11 @@
     border: none;
     margin-left: 2%;
     margin-bottom: 1%;
-    font-size: 30px;
-    color: yellow;
+    font-size: 27px;
+    color: white;
+}
+.space {
+    width: 60px;
 }
 .firstChar {
     color: yellow;
@@ -69,26 +135,20 @@
 }
 
 .screen {
-    border-bottom: 50px solid rgb(255, 159, 95);
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    height: 100;
-    width: 80%;
-    filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
-    font-size: 25px;
-    color: #fff;
+    margin-top: 50px;
+    height: 100px;
+    width: 100%;
+    background-color: #ff9800;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    line-height: 100px;
+    letter-spacing: 8px;
 }
 
 .gheDuocChon {
-    border: 3px solid orange;
-
-    background: orange;
-    color: #000;
-
-    cursor: no-drop !important;
-    border-radius: 5px;
-    width: 45px;
-    height: 35px;
+    background-color: orange;
 }
 
 .gheDangChon {
@@ -100,4 +160,24 @@
     border-radius: 5px;
     width: 45px;
     height: 35px;
+}
+.btn__area {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.confirm__table {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.confirm__table,
+.confirm__table th,
+.confirm__table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+    padding: 10px 50px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 26px;
+    text-align: center;
 }
