@@ -36,26 +36,44 @@ export default class Seat extends Component {
                                         item.danhSachGhe.map((seatItem, key) => (
                                             <>
                                                 {
-                                                    (seatItem.daDat === true)
+                                                    (seatItem.daDat === 'not empty')
                                                         ? <>
                                                             {
                                                                 (seatItem.soGhe.includes("5"))
                                                                     ? <>
-                                                                        <td onClick={() => this.context.getSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
+                                                                        <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
                                                                         <td className='space'></td>
                                                                     </>
-                                                                    : <td onClick={() => this.context.getSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
+                                                                    : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
                                                             }
                                                         </>
-                                                        : <>
+                                                        :
+
+                                                        <>
                                                             {
-                                                                (seatItem.soGhe.includes("5"))
+                                                                (seatItem.daDat === 'empty')
                                                                     ? <>
-                                                                        <td onClick={() => this.context.getSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
-                                                                        <td className='space'></td>
+                                                                        {
+                                                                            (seatItem.soGhe.includes("5"))
+                                                                                ? <>
+                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
+                                                                                    <td className='space'></td>
+                                                                                </>
+                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
+                                                                        }
                                                                     </>
-                                                                    : <td onClick={() => this.context.getSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
-                                                            }</>
+                                                                    : <>
+                                                                        {
+                                                                            (seatItem.soGhe.includes("5"))
+                                                                                ? <>
+                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDangChon'></td>
+                                                                                    <td className='space'></td>
+                                                                                </>
+                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDangChon'></td>
+                                                                        }
+                                                                    </>
+                                                            }
+                                                        </>
                                                 }
 
                                             </>

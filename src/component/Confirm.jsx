@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
+import { DataContext } from '../context/Context';
 export default class Confirm extends Component {
+    static contextType = DataContext;
     render() {
         return (
             <>
                 <div className='btn__area'>
-                    <button>Confirm Selection</button>
+                    <button onClick={() => this.context.confirmSeat()}>Confirm Selection</button>
                 </div>
                 <table className='confirm__table'>
                     <thead>
