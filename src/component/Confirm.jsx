@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import { DataContext } from '../context/Context';
 export default class Confirm extends Component {
     static contextType = DataContext;
+    state = {
+        confirm: false
+    }
     render() {
         return (
             <>
                 <div className='btn__area'>
-                    <button onClick={() => this.context.confirmSeat()}>Confirm Selection</button>
+                    <button onClick={() => this.setState({ confirm: true })}>Confirm Selection</button>
                 </div>
                 <table className='confirm__table'>
                     <thead>
@@ -16,14 +19,25 @@ export default class Confirm extends Component {
                             <th>Seats</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Toàn</td>
-                            <td>5</td>
-                            <td>gg gg gg</td>
-                        </tr>
+                    {
+                        this.state.confirm
+                            ? <tbody>
+                                <tr>
+                                    <td>{this.props.name}</td>
+                                    <td>{this.props.seatNumber}</td>
+                                    <td>{this.context.seatArray}</td>
+                                </tr>
 
-                    </tbody>
+                            </tbody>
+                            : <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                    }
+
                 </table>
 
             </>

@@ -659,21 +659,22 @@ export default class DataProvider extends Component {
         seat: data,
         seatArray: []
     }
-    chooseSeat = (seat, daDat) => {
+    chooseSeat = (seat, daDat, maxSeat) => {
         const { seatArray } = this.state
 
 
         if (daDat === 'empty') {
-            this.state.seat.forEach(seatItem => {
-                seatItem.danhSachGhe.forEach(dsGhe => {
-                    if (dsGhe.soGhe === seat)
-                        dsGhe.daDat = 'choosing'
+            if (seatArray.length < maxSeat) {
+                this.state.seat.forEach(seatItem => {
+                    seatItem.danhSachGhe.forEach(dsGhe => {
+                        if (dsGhe.soGhe === seat)
+                            dsGhe.daDat = 'choosing'
+                    })
                 })
-            })
-            this.setState({
-                seatArray: [...seatArray, seat]
-            })
-
+                this.setState({
+                    seatArray: [...seatArray, seat]
+                })
+            }
         }
         else if (daDat === 'choosing') {
             this.state.seat.forEach(seatItem => {
@@ -699,10 +700,10 @@ export default class DataProvider extends Component {
         console.log(this.state.seatArray);
     }
     render() {
-        const { seat } = this.state;
+        const { seat, seatArray } = this.state;
         const { chooseSeat, confirmSeat } = this;
         return (
-            <DataContext.Provider value={{ seat, chooseSeat, confirmSeat }}>
+            <DataContext.Provider value={{ seat, chooseSeat, confirmSeat, seatArray }}>
                 {this.props.children}
             </DataContext.Provider>
         )

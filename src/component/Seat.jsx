@@ -41,10 +41,10 @@ export default class Seat extends Component {
                                                             {
                                                                 (seatItem.soGhe.includes("5"))
                                                                     ? <>
-                                                                        <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
+                                                                        <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
                                                                         <td className='space'></td>
                                                                     </>
-                                                                    : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
+                                                                    : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe gheDuocChon'></td>
                                                             }
                                                         </>
                                                         :
@@ -56,20 +56,20 @@ export default class Seat extends Component {
                                                                         {
                                                                             (seatItem.soGhe.includes("5"))
                                                                                 ? <>
-                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
+                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe'></td>
                                                                                     <td className='space'></td>
                                                                                 </>
-                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe'></td>
+                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe'></td>
                                                                         }
                                                                     </>
                                                                     : <>
                                                                         {
                                                                             (seatItem.soGhe.includes("5"))
                                                                                 ? <>
-                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDangChon'></td>
+                                                                                    <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe gheDangChon'></td>
                                                                                     <td className='space'></td>
                                                                                 </>
-                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat)} key={seatItem.daDat} className='ghe gheDangChon'></td>
+                                                                                : <td onClick={() => this.context.chooseSeat(seatItem.soGhe, seatItem.daDat, this.props.seatNumber)} key={seatItem.daDat} className='ghe gheDangChon'></td>
                                                                         }
                                                                     </>
                                                             }
